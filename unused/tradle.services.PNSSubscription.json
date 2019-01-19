@@ -1,0 +1,33 @@
+{
+  "id": "tradle.services.PNSSubscription",
+  "title": "Push Notifications Subscription",
+  "type": "tradle.Model",
+  "properties": {
+    "publisher": {
+      "type": "string",
+      "description": "publisher identity permalink"
+    },
+    "subscriber": {
+      "type": "string",
+      "description": "subscriber identity permalink"
+    }
+  },
+  "indexes": [
+    {
+      "hashKey": "subscriber",
+      "rangeKey": "publisher"
+    },
+    {
+      "hashKey": "publisher",
+      "rangeKey": "subscriber"
+    },
+    {
+      "hashKey": "_t",
+      "rangeKey": "_time"
+    }
+  ],
+  "required": [
+    "publisher",
+    "subscriber"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "tradle.services.PNSSubscriber",
+  "title": "Push Notifications Subscriber",
+  "type": "tradle.Model",
+  "properties": {
+    "permalink": {
+      "type": "string",
+      "description": "subscriber identity permalink"
+    },
+    "devices": {
+      "type": "array",
+      "inlined": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "subscriptions": {
+      "type": "array",
+      "inlined": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "unreadCount": {
+      "type": "number"
+    }
+  },
+  "primaryKeys": {
+    "hashKey": "permalink",
+    "rangeKey": {
+      "template": "_"
+    }
+  },
+  "indexes": [
+    {
+      "hashKey": "_t",
+      "rangeKey": "_time"
+    }
+  ],
+  "required": [
+    "permalink",
+    "devices"
+  ]
+}

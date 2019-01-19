@@ -1,0 +1,27 @@
+{
+  "id": "tradle.services.PNSPublisher",
+  "title": "Push Notifications Publisher",
+  "type": "tradle.Model",
+  "properties": {
+    "publisher": {
+      "type": "string",
+      "description": "publisher identity permalink"
+    },
+    "accountId": {
+      "type": "string",
+      "description": "publisher cloud platform accountId (e.g. AWS Account ID)"
+    },
+    "region": {
+      "type": "string"
+    }
+  },
+  "primaryKeys": {
+    "hashKey": "publisher",
+    "rangeKey": ["accountId", "region"]
+  },
+  "required": [
+    "publisher",
+    "accountId",
+    "region"
+  ]
+}

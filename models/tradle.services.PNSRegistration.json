@@ -1,0 +1,36 @@
+{
+  "id": "tradle.services.PNSRegistration",
+  "title": "Push Notifications Device Registration",
+  "type": "tradle.Model",
+  "properties": {
+    "identity": {
+      "inlined": true,
+      "type": "object",
+      "ref": "tradle.Identity",
+      "description": "subscriber identity"
+    },
+    "token": {
+      "type": "string",
+      "description": "subscriber device token"
+    },
+    "protocol": {
+      "type": "string",
+      "pattern": "^apns|gcm$"
+    }
+  },
+  "indexes": [
+    {
+      "hashKey": "identity._permalink",
+      "rangeKey": "token"
+    },
+    {
+      "hashKey": "_t",
+      "rangeKey": "_time"
+    }
+  ],
+  "required": [
+    "identity",
+    "token",
+    "protocol"
+  ]
+}

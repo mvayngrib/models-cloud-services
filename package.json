@@ -1,0 +1,43 @@
+{
+  "name": "@tradle/models-cloud-services",
+  "version": "1.0.0",
+  "description": "models for Tradle MyCloud services stack",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --quiet --ext .js --ext .json .",
+    "validate": "validate-model ./models.json --depends-on @tradle/models",
+    "merge": "pack-models -i ./models -o ./models.json -d ./models -l bn,vi,nl,es,fr,fil",
+    "dictionaries": "pack-models -d ./models -l my,th,km",
+    "postpublish": "git push -u",
+    "precommit": "npm run merge && git add models.json && npm run validate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tradle/models"
+  },
+  "keywords": [
+    "tradle",
+    "models"
+  ],
+  "author": "Mark Vayngrib <mark.vayngrib@lablz.com> (http://github.com/mvayngrib)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tradle/models/issues"
+  },
+  "homepage": "https://github.com/tradle/models",
+  "devDependencies": {
+    "@tradle/models": "github:tradle/models",
+    "@tradle/pack-models": "^2.1.2",
+    "@tradle/validate-model": "^7.1.1",
+    "eslint": "^3.15.0",
+    "eslint-plugin-json": "^1.2.0",
+    "husky": "~0.13.4",
+    "json-stable-stringify": "^1.0.1",
+    "minimist": "^1.2.0",
+    "mockery": "^2.1.0",
+    "write-file-atomic": "^1.1.4"
+  },
+  "peerDependencies": {
+    "@tradle/models": "*"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "tradle.services.PNSDevice",
+  "title": "Push Notifications Device",
+  "type": "tradle.Model",
+  "subClassOf": "tradle.Enum",
+  "properties": {
+    "platform": {
+      "type": "string"
+    }
+  },
+  "enum": [
+    {
+      "id": "apns",
+      "title": "Apple"
+    },
+    {
+      "id": "gcm",
+      "title": "Google"
+    }
+  ]
+}
